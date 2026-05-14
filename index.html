@@ -1,41 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Omar Hosny</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Omar Hosny - Frontend and WordPress Developer portfolio." />
+  <title>Omar Hosny | Frontend & WordPress Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="site-bg"></div>
 
-<header class="hero">
-    <h1>Omar Hosny</h1>
-    <p>Frontend & WordPress Developer</p>
-    <a href="#portfolio" class="btn">View My Work</a>
-</header>
+  <header class="nav">
+    <a class="logo" href="#home" aria-label="Omar Hosny Home">
+      <span>OH</span>
+      <strong>Omar Hosny</strong>
+    </a>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>I'm a Frontend & WordPress Developer building modern, fast and clean websites.</p>
-</section>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-<section id="portfolio">
-    <h2>My Work</h2>
-    <div class="projects">
-        <div class="project">
-            <img src="images/project1.jpg" alt="">
-            <h3>Project One</h3>
+    <a class="nav-cta" href="mailto:omarhosny10100@gmail.com">Hire Me</a>
+  </header>
+
+  <main>
+    <section id="home" class="hero section-pad">
+      <div class="hero-content">
+        <p class="eyebrow">Available for freelance projects</p>
+        <h1>Premium websites for brands that need a sharp digital presence.</h1>
+        <p class="hero-text">
+          I build modern, fast, responsive websites using Frontend technologies and WordPress, focused on clean design, strong user experience, and business-ready performance.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#portfolio">View My Work</a>
+          <a class="btn secondary" href="https://wa.me/201210150524" target="_blank" rel="noopener">WhatsApp</a>
         </div>
-        <div class="project">
-            <img src="images/project2.jpg" alt="">
-            <h3>Project Two</h3>
+
+        <div class="stats" aria-label="Highlights">
+          <div>
+            <strong>Responsive</strong>
+            <span>Mobile-first layouts</span>
+          </div>
+          <div>
+            <strong>Fast</strong>
+            <span>Clean optimized code</span>
+          </div>
+          <div>
+            <strong>WordPress</strong>
+            <span>Custom business sites</span>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
 
-<section id="contact">
-    <h2>Contact Me</h2>
-    <a href="https://wa.me/201234567890" class="btn">WhatsApp</a>
-</section>
+      <aside class="hero-card" aria-label="Profile card">
+        <div class="profile-orb">OH</div>
+        <h2>Omar Hosny</h2>
+        <p>Frontend & WordPress Developer</p>
+        <div class="card-line"></div>
+        <a href="tel:+201210150524">01210150524</a>
+        <a href="mailto:omarhosny10100@gmail.com">omarhosny10100@gmail.com</a>
+      </aside>
+    </section>
 
+    <section id="about" class="section-pad split-section">
+      <div>
+        <p class="eyebrow">About me</p>
+        <h2>Clean structure, elegant visuals, and websites that feel expensive.</h2>
+      </div>
+      <p>
+        I create professional portfolio, business, and landing pages with attention to typography, spacing, responsiveness, and conversion. Every section is designed to look polished on desktop and mobile.
+      </p>
+    </section>
+
+    <section id="services" class="section-pad">
+      <div class="section-head">
+        <p class="eyebrow">Services</p>
+        <h2>What I can build</h2>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <span>01</span>
+          <h3>Landing Pages</h3>
+          <p>High-end landing pages for products, services, and campaigns with strong visual hierarchy.</p>
+        </article>
+        <article class="service-card">
+          <span>02</span>
+          <h3>WordPress Websites</h3>
+          <p>Professional WordPress websites for businesses, personal brands, and service providers.</p>
+        </article>
+        <article class="service-card">
+          <span>03</span>
+          <h3>Frontend Development</h3>
+          <p>Responsive HTML, CSS, and JavaScript interfaces built with clean, maintainable code.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section-pad">
+      <div class="section-head">
+        <p class="eyebrow">Portfolio</p>
+        <h2>Selected work</h2>
+      </div>
+
+      <div class="projects">
+        <article class="project-card">
+          <div class="project-preview gradient-one"></div>
+          <div class="project-body">
+            <p>Business Website</p>
+            <h3>Modern Company Landing Page</h3>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-preview gradient-two"></div>
+          <div class="project-body">
+            <p>Portfolio Website</p>
+            <h3>Personal Brand Portfolio</h3>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-preview gradient-three"></div>
+          <div class="project-body">
+            <p>WordPress</p>
+            <h3>Service Provider Website</h3>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section-pad contact-section">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Ready to build a professional website?</h2>
+        <p>Send a message directly by WhatsApp or email.</p>
+      </div>
+
+      <div class="contact-actions">
+        <a class="contact-card" href="https://wa.me/201210150524" target="_blank" rel="noopener">
+          <span>Phone / WhatsApp</span>
+          <strong>01210150524</strong>
+        </a>
+        <a class="contact-card" href="mailto:omarhosny10100@gmail.com">
+          <span>Email</span>
+          <strong>omarhosny10100@gmail.com</strong>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Omar Hosny. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
