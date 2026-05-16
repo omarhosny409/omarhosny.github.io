@@ -560,10 +560,10 @@ h1 {
   }
 }
 
-/* Intro portrait upgrade */
+/* Intro portrait upgrade - cleaned */
 .hero-visual {
-  min-height: 620px;
-  padding: 18px;
+  min-height: 700px;
+  padding: 20px;
   isolation: isolate;
   background:
     linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.035)),
@@ -575,17 +575,17 @@ h1 {
   content: "";
   position: absolute;
   inset: 18px;
+  z-index: 2;
+  pointer-events: none;
   border: 1px solid rgba(255,255,255,.12);
   border-radius: calc(var(--radius) - 6px);
-  pointer-events: none;
-  z-index: 2;
 }
 
 .portrait-card {
   position: relative;
-  min-height: 460px;
-  border-radius: 24px;
+  min-height: 540px;
   overflow: hidden;
+  border-radius: 24px;
   transform-style: preserve-3d;
   will-change: transform;
   transition: transform .35s ease, box-shadow .35s ease;
@@ -604,11 +604,16 @@ h1 {
 
 .portrait-frame {
   position: absolute;
-  inset: 10px 10px 0;
+  inset: 12px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.18);
   border-radius: 22px;
-  background: rgba(0,0,0,.24);
+  background:
+    linear-gradient(180deg, rgba(7,11,19,.14), rgba(7,11,19,.58)),
+    url("assets/omar-hosny-intro-blur.jpg") center / cover;
   box-shadow: 0 28px 70px rgba(0,0,0,.38);
 }
 
@@ -616,21 +621,21 @@ h1 {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: 50% 44%;
+  object-fit: contain;
+  object-position: center center;
   filter: saturate(1.02) contrast(1.03);
-  transform: scale(1.01);
-  animation: portraitFloat 7s ease-in-out infinite;
+  transform: scale(.985);
+  animation: portraitFloatCentered 7s ease-in-out infinite;
 }
 
 .portrait-frame::after {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, transparent 46%, rgba(7,11,19,.52) 100%),
-    radial-gradient(circle at 50% 20%, transparent 24%, rgba(0,0,0,.18) 100%);
   pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(7,11,19,.08) 0%, transparent 24%, rgba(7,11,19,.42) 100%),
+    radial-gradient(circle at 50% 18%, transparent 22%, rgba(0,0,0,.12) 100%);
 }
 
 .portrait-shine {
@@ -661,6 +666,15 @@ h1 {
   animation: slowSpin 14s linear infinite;
 }
 
+.orbit-two {
+  width: 96px;
+  height: 96px;
+  left: -22px;
+  bottom: 84px;
+  border: 1px solid rgba(125, 211, 252, .35);
+  animation: slowSpin 11s linear infinite reverse;
+}
+
 .orbit-one::after,
 .orbit-two::after {
   content: "";
@@ -677,15 +691,6 @@ h1 {
   left: 18px;
 }
 
-.orbit-two {
-  width: 96px;
-  height: 96px;
-  left: -22px;
-  bottom: 84px;
-  border: 1px solid rgba(125, 211, 252, .35);
-  animation: slowSpin 11s linear infinite reverse;
-}
-
 .orbit-two::after {
   right: 12px;
   bottom: 10px;
@@ -699,6 +704,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 9px;
+  max-width: calc(100% - 44px);
   border: 1px solid rgba(255,255,255,.16);
   border-radius: 999px;
   background: rgba(7, 11, 19, .68);
@@ -708,15 +714,17 @@ h1 {
 }
 
 .badge-top {
-  top: 28px;
-  left: 28px;
+  top: 22px;
+  right: 22px;
+  left: auto;
   padding: 11px 14px;
   animation: floatBadge 5.5s ease-in-out infinite;
 }
 
 .badge-bottom {
-  right: 26px;
-  bottom: 22px;
+  right: auto;
+  bottom: 26px;
+  left: 26px;
   flex-direction: column;
   align-items: flex-start;
   gap: 2px;
@@ -778,6 +786,12 @@ h1 {
   will-change: transform;
 }
 
+.service-card,
+.work-card,
+.timeline div {
+  transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
 .service-card:hover,
 .work-card:hover,
 .timeline div:hover {
@@ -786,15 +800,9 @@ h1 {
   background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.055));
 }
 
-.service-card,
-.work-card,
-.timeline div {
-  transition: transform .25s ease, border-color .25s ease, background .25s ease;
-}
-
-@keyframes portraitFloat {
-  0%, 100% { transform: scale(1.01) translateY(0); }
-  50% { transform: scale(1.035) translateY(-8px); }
+@keyframes portraitFloatCentered {
+  0%, 100% { transform: scale(.985) translateY(0); }
+  50% { transform: scale(1) translateY(-6px); }
 }
 
 @keyframes shineSweep {
@@ -810,105 +818,6 @@ h1 {
 @keyframes floatBadge {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
-}
-
-@media (max-width: 900px) {
-  .hero-visual {
-    min-height: 590px;
-  }
-
-  .portrait-card {
-    min-height: 410px;
-  }
-}
-
-@media (max-width: 560px) {
-  .hero-visual {
-    min-height: 560px;
-  }
-
-  .portrait-card {
-    min-height: 370px;
-  }
-
-  .floating-badge {
-    max-width: calc(100% - 44px);
-  }
-
-  .badge-bottom {
-    left: 22px;
-    right: auto;
-  }
-
-  .profile-strip {
-    align-items: flex-start;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: .01ms !important;
-  }
-}
-
-.portrait-frame {
-  z-index: 1;
-}
-
-/* Centered portrait correction */
-.hero-visual {
-  min-height: 700px;
-  padding: 20px;
-}
-
-.portrait-card {
-  min-height: 540px;
-}
-
-.portrait-frame {
-  inset: 12px;
-  display: grid;
-  place-items: center;
-  background:
-    linear-gradient(180deg, rgba(7,11,19,.14), rgba(7,11,19,.58)),
-    url("assets/omar-hosny-intro-blur.jpg") center / cover;
-}
-
-.portrait-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center center;
-  transform: scale(.985);
-  animation: portraitFloatCentered 7s ease-in-out infinite;
-}
-
-.portrait-frame::after {
-  background:
-    linear-gradient(180deg, rgba(7,11,19,.08) 0%, transparent 24%, rgba(7,11,19,.42) 100%),
-    radial-gradient(circle at 50% 18%, transparent 22%, rgba(0,0,0,.12) 100%);
-}
-
-.badge-top {
-  top: 22px;
-  right: 22px;
-  left: auto;
-}
-
-.badge-bottom {
-  right: auto;
-  left: 26px;
-  bottom: 26px;
-}
-
-@keyframes portraitFloatCentered {
-  0%, 100% { transform: scale(.985) translateY(0); }
-  50% { transform: scale(1) translateY(-6px); }
 }
 
 @media (max-width: 900px) {
@@ -931,12 +840,27 @@ h1 {
   }
 
   .badge-top {
-    right: 18px;
     top: 18px;
+    right: 18px;
   }
 
   .badge-bottom {
-    left: 18px;
     bottom: 18px;
+    left: 18px;
+  }
+
+  .profile-strip {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
   }
 }
