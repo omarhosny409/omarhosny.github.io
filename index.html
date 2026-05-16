@@ -8,7 +8,36 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 </head>
-<body>
+<body class="is-loading">
+  <!-- Premium refresh loader -->
+  <div class="site-loader" id="siteLoader" aria-live="polite" aria-label="Website loading">
+    <div class="loader-grid" aria-hidden="true"></div>
+    <div class="loader-noise" aria-hidden="true"></div>
+
+    <div class="loader-shell">
+      <div class="loader-orb" aria-hidden="true">
+        <span class="loader-ring loader-ring-one"></span>
+        <span class="loader-ring loader-ring-two"></span>
+        <span class="loader-ring loader-ring-three"></span>
+        <span class="loader-particle particle-one"></span>
+        <span class="loader-particle particle-two"></span>
+        <span class="loader-particle particle-three"></span>
+        <span class="loader-core"><strong>OH</strong></span>
+      </div>
+
+      <p class="loader-kicker">Protophilo Website</p>
+      <h2 class="loader-title" data-loader-title>Loading Experience</h2>
+
+      <div class="loader-progress" aria-hidden="true">
+        <span data-loader-progress></span>
+      </div>
+
+      <div class="loader-status">
+        <span data-loader-status>Preparing visuals</span>
+        <strong data-loader-count>00%</strong>
+      </div>
+    </div>
+  </div>
   <div class="page-shell">
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Omar Hosny home">
@@ -202,6 +231,18 @@
     </footer>
   </div>
 
+  <!-- Social sidebar -->
+  <div class="social-sidebar" aria-label="Social profiles">
+    <a class="social-link" href="#" aria-label="Instagram profile">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a class="social-link" href="#" aria-label="LinkedIn profile">
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+    <a class="social-link" href="#" aria-label="Behance profile">
+      <i class="fa-brands fa-behance"></i>
+    </a>
+  </div>
 
   <div class="fixed-contact-actions" aria-label="Quick contact actions">
     <a class="fixed-action-btn phone-btn" href="tel:+201210150524" aria-label="Call Omar Hosny">
@@ -215,6 +256,10 @@
   <button class="go-top-btn" type="button" aria-label="Go to top">
      <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="21" height="21" viewBox="0,0,256,256"><g fill="#ffffff" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="translate(257.01504,254.31174) rotate(180) scale(12.19048,12.19048)"><path d="M18.4511,9.37805c-2.3977,0 -4.583,-2.18433 -4.583,-4.58304v-0.98349h-1.967v0.98349c0,1.74469 0.7652,3.38121 1.966,4.58304h-12.13517v1.96695h12.13517c-1.2008,1.2018 -1.966,2.8383 -1.966,4.583v0.9835h1.967v-0.9835c0,-2.3987 2.1853,-4.583 4.583,-4.583h0.9835v-1.96695z"></path></g></g></svg>
   </button>
+
+  <!-- Custom cursor -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
 
   <script src="script.js"></script>
 </body>
