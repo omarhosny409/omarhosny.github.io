@@ -31,3 +31,21 @@ if (tiltCard && !prefersReducedMotion) {
     tiltCard.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0)';
   });
 }
+
+const goTopButton = document.querySelector('.go-top-btn');
+
+if (goTopButton) {
+  const toggleGoTopButton = () => {
+    goTopButton.classList.toggle('show', window.scrollY > 420);
+  };
+
+  toggleGoTopButton();
+  window.addEventListener('scroll', toggleGoTopButton, { passive: true });
+
+  goTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion ? 'auto' : 'smooth'
+    });
+  });
+}
