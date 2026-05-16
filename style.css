@@ -888,10 +888,39 @@ h1 {
   box-shadow: 0 14px 32px rgba(0, 0, 0, .28);
   transition: transform .22s ease, box-shadow .22s ease, opacity .22s ease;
   font-size: 22px;
+  position: relative;
+  z-index: 999;
 }
  
 .phone-btn {
   background: linear-gradient(135deg, #0a0a0a, #183767);
+}
+.fixed-action-btn.phone-btn:after {
+    content:"";
+    display: block;
+    position: absolute;
+    border: 2px solid #122543;
+    inset: -10px;
+    border-radius: 50%;
+    animation: 1.5s linear infinite animate;
+    opacity: 0;
+    z-index: -1;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(.5);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
 }
 
 .whatsapp-btn {
