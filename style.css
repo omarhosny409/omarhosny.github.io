@@ -877,8 +877,8 @@ h1 {
 
 .fixed-action-btn,
 .go-top-btn {
-  width: 50px;
-  height: 50px;
+  width: 58px;
+  height: 58px;
   display: grid;
   place-items: center;
   border: 0;
@@ -891,10 +891,9 @@ h1 {
 
 .fixed-action-btn svg,
 .go-top-btn svg {
-  width: 20px;
-  height: 20px;
+  width: 27px;
+  height: 27px;
   fill: currentColor;
-  transform: rotate(90deg);
 }
 
 .phone-btn {
@@ -916,6 +915,12 @@ h1 {
   border: 1px solid var(--line);
   background: linear-gradient(180deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .045));
   box-shadow: var(--shadow);
+}
+
+.go-top-btn svg {
+    width: 20px;
+    height: 20px;
+    transform: rotate(90deg);
 }
 
 .go-top-btn.show {
