@@ -67,17 +67,17 @@ const translations = {
     'work.card3Text': 'Structured offer, benefits, and contact-focused sections.',
     'projects.eyebrow': 'My Projects',
     'projects.title': 'Project showcase widget',
-    'projects.text': 'A polished widget for full-page project screenshots. Hover the featured image to scroll through the full website preview.',
+    'projects.text': 'A polished widget for full-page project screenshots. Hover any project image to scroll through the full website preview at one steady speed.',
     'projects.hoverHint': 'Hover to scroll full page',
     'projects.placeholder': 'Add project image here',
     'projects.card1Title': 'Aroma IPTV Website',
     'projects.card1Text': 'Full-page website preview with an auto-scroll hover effect, built to present long landing pages in a clean portfolio card.',
-    'projects.card2Title': 'Landing Page',
-    'projects.card2Text': 'Prepared for a campaign, service, or product landing page preview.',
-    'projects.card3Title': 'Portfolio Build',
-    'projects.card3Text': 'Prepared for a personal brand, CV, or portfolio website preview.',
-    'projects.card4Title': 'WordPress Website',
-    'projects.card4Text': 'Prepared for a business, agency, or service provider website preview.',
+    'projects.card2Title': 'SaaS Landing Page',
+    'projects.card2Text': 'A custom product landing page preview with hero, features, dashboard sections, and pricing blocks.',
+    'projects.card3Title': 'Creative Portfolio',
+    'projects.card3Text': 'A personal portfolio preview with intro, case studies, skills, workflow, and contact sections.',
+    'projects.card4Title': 'WordPress Business Site',
+    'projects.card4Text': 'A business website preview prepared for WordPress sections, services, testimonials, blog, and CTA areas.',
     'projects.tagUi': 'UI Design',
     'projects.tagDev': 'Frontend',
     'projects.tagResponsive': 'Responsive',
@@ -168,17 +168,17 @@ const translations = {
     'work.card3Text': 'عرض خدمة منظم، مميزات واضحة، وأقسام مركزة على التواصل.',
     'projects.eyebrow': 'أعمالي',
     'projects.title': 'ودجيت عرض المشاريع',
-    'projects.text': 'ودجيت مصقول لعرض صور المشاريع الطويلة. اعمل Hover على الصورة الرئيسية علشان تسكرول لحد آخر الصفحة.',
+    'projects.text': 'ودجيت مصقول لعرض صور المشاريع الطويلة. اعمل Hover على أي صورة مشروع علشان تسكرول لحد آخر الصفحة بسرعة ثابتة.',
     'projects.hoverHint': 'اعمل Hover علشان الصورة تسكرول كاملة',
     'projects.placeholder': 'ضع صورة المشروع هنا',
     'projects.card1Title': 'موقع Aroma IPTV',
     'projects.card1Text': 'عرض كامل للموقع بتأثير Auto Scroll عند الـ Hover، مناسب لعرض اللاندنج بيدج الطويلة داخل كارت بورتفوليو نظيف.',
-    'projects.card2Title': 'Landing Page',
-    'projects.card2Text': 'جاهز لعرض صفحة حملة أو خدمة أو منتج.',
-    'projects.card3Title': 'Portfolio Build',
-    'projects.card3Text': 'جاهز لعرض موقع براند شخصي أو CV أو بورتفوليو.',
-    'projects.card4Title': 'WordPress Website',
-    'projects.card4Text': 'جاهز لعرض موقع شركة أو وكالة أو مقدم خدمة.',
+    'projects.card2Title': 'SaaS Landing Page',
+    'projects.card2Text': 'عرض مخصص للاندنج بيدج منتج فيها هيرو، مميزات، داشبورد، وأسعار.',
+    'projects.card3Title': 'Creative Portfolio',
+    'projects.card3Text': 'عرض بورتفوليو شخصي فيه مقدمة، كيس ستاديز، مهارات، خطوات شغل، وتواصل.',
+    'projects.card4Title': 'WordPress Business Site',
+    'projects.card4Text': 'عرض موقع بيزنس جاهز لأقسام ووردبريس: خدمات، آراء عملاء، مقالات، ودعوات تواصل.',
     'projects.tagUi': 'UI Design',
     'projects.tagDev': 'Frontend',
     'projects.tagResponsive': 'Responsive',
@@ -448,9 +448,10 @@ const updateProjectScrollDistances = () => {
 
     const setDistance = () => {
       const distance = Math.max(0, image.scrollHeight - screen.clientHeight);
-      const duration = Math.max(5.5, Math.min(14, distance / 175));
+      const pixelsPerSecond = 85;
+      const duration = distance > 0 ? distance / pixelsPerSecond : 0;
       screen.style.setProperty('--project-scroll-distance', `${distance}px`);
-      screen.style.setProperty('--project-scroll-duration', `${duration}s`);
+      screen.style.setProperty('--project-scroll-duration', `${duration.toFixed(2)}s`);
     };
 
     if (image.complete) {
