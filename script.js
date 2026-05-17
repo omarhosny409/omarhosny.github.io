@@ -1,8 +1,8 @@
 
 const translations = {
   en: {
-    metaTitle: 'Omar Hosny | Full Stack & WordPress Developer',
-    metaDescription: 'Omar Hosny - Full Stack and WordPress Developer creating premium websites, landing pages, and clean digital experiences.',
+    metaTitle: 'Omar Hosny | Frontend & WordPress Developer',
+    metaDescription: 'Omar Hosny - Frontend and WordPress Developer creating premium websites, landing pages, and clean digital experiences.',
     'loader.aria': 'Website loading',
     'loader.kicker': 'Portfolio System',
     'loader.title': 'Crafting the interface',
@@ -14,8 +14,8 @@ const translations = {
     'loader.status4': 'Almost ready',
     'brand.aria': 'Omar Hosny home',
     'brand.name': 'Omar Hosny',
-    'brand.role': 'Full Stack & WordPress',
-    'profile.role': 'Full Stack & WordPress Developer',
+    'brand.role': 'Frontend & WordPress',
+    'profile.role': 'Frontend & WordPress Developer',
     'nav.aria': 'Main navigation',
     'nav.services': 'Services',
     'nav.work': 'Work',
@@ -29,7 +29,7 @@ const translations = {
     'controls.nextLang': 'AR',
     'hero.eyebrow': 'Available for freelance projects',
     'hero.title': 'I build premium websites with clean code, sharp visuals, and business focus.',
-    'hero.text': 'Full Stack and WordPress Developer specializing in building professional websites and modern, fast, responsive digital experiences with strong design and high performance that help turn visitors into customers.',
+    'hero.text': 'Frontend and WordPress developer creating modern portfolio websites, landing pages, and digital experiences that look professional, load fast, and turn visitors into clients.',
     'hero.primary': 'Start a project',
     'hero.secondary': 'View projects',
     'hero.trustAria': 'Key strengths',
@@ -39,7 +39,7 @@ const translations = {
     'hero.visualAria': 'Omar Hosny intro portrait',
     'hero.portraitAlt': 'Omar Hosny professional portrait',
     'hero.available': 'Available now',
-    'hero.frontend': 'Full Stack',
+    'hero.frontend': 'Frontend',
     'hero.skills': 'WordPress • UI • Responsive',
     'stats.aria': 'Project highlights',
     'stats.responsive': 'Responsive layouts',
@@ -67,10 +67,11 @@ const translations = {
     'work.card3Text': 'Structured offer, benefits, and contact-focused sections.',
     'projects.eyebrow': 'My Projects',
     'projects.title': 'Project showcase widget',
-    'projects.text': 'A ready section for your future project images. Replace each placeholder with a real screenshot when a project is ready.',
+    'projects.text': 'A polished widget for full-page project screenshots. Hover the featured image to scroll through the full website preview.',
+    'projects.hoverHint': 'Hover to scroll full page',
     'projects.placeholder': 'Add project image here',
-    'projects.card1Title': 'Featured Website Project',
-    'projects.card1Text': 'Use this card for your strongest website screenshot, result, and short project description.',
+    'projects.card1Title': 'Aroma IPTV Website',
+    'projects.card1Text': 'Full-page website preview with an auto-scroll hover effect, built to present long landing pages in a clean portfolio card.',
     'projects.card2Title': 'Landing Page',
     'projects.card2Text': 'Prepared for a campaign, service, or product landing page preview.',
     'projects.card3Title': 'Portfolio Build',
@@ -78,7 +79,7 @@ const translations = {
     'projects.card4Title': 'WordPress Website',
     'projects.card4Text': 'Prepared for a business, agency, or service provider website preview.',
     'projects.tagUi': 'UI Design',
-    'projects.tagDev': 'Full Stack',
+    'projects.tagDev': 'Frontend',
     'projects.tagResponsive': 'Responsive',
     'process.eyebrow': 'Process',
     'process.title': 'Simple workflow, polished result',
@@ -101,8 +102,8 @@ const translations = {
     'fixed.top': 'Go to top'
   },
   ar: {
-    metaTitle: 'عمر حسني | مطور Full Stack و WordPress',
-    metaDescription: 'عمر حسني - مطور Full Stack و WordPress يصمم مواقع احترافية ولاندنج بيدج وتجارب رقمية نظيفة.',
+    metaTitle: 'عمر حسني | مطور Frontend و WordPress',
+    metaDescription: 'عمر حسني - مطور Frontend و WordPress يصمم مواقع احترافية ولاندنج بيدج وتجارب رقمية نظيفة.',
     'loader.aria': 'تحميل الموقع',
     'loader.kicker': 'نظام البورتفوليو',
     'loader.title': 'بنجهز الواجهة',
@@ -114,8 +115,8 @@ const translations = {
     'loader.status4': 'ثواني ويبدأ',
     'brand.aria': 'الصفحة الرئيسية لعمر حسني',
     'brand.name': 'عمر حسني',
-    'brand.role': 'Full Stack و WordPress',
-    'profile.role': 'مطور Full Stack و WordPress',
+    'brand.role': 'Frontend و WordPress',
+    'profile.role': 'مطور Frontend و WordPress',
     'nav.aria': 'التنقل الرئيسي',
     'nav.services': 'الخدمات',
     'nav.work': 'الأعمال',
@@ -129,7 +130,7 @@ const translations = {
     'controls.nextLang': 'EN',
     'hero.eyebrow': 'متاح لمشاريع فريلانس',
     'hero.title': 'بصمم مواقع احترافية بكود نظيف وشكل قوي وتركيز على هدف البيزنس.',
-    'hero.text': 'مطور Full Stack وWordPress متخصص في بناء مواقع ويب احترافية، وتجارب رقمية حديثة سريعة ومتجاوبة، بتصميم قوي وأداء عالي يساعد على تحويل الزوار إلى عملاء.',
+    'hero.text': 'مطور Frontend و WordPress متخصص في تصميم بورتفوليوهات، لاندنج بيدج، وتجارب رقمية حديثة شكلها احترافي وسريعة وبتحوّل الزائر لعميل.',
     'hero.primary': 'ابدأ مشروع',
     'hero.secondary': 'شوف أعمالي',
     'hero.trustAria': 'نقاط القوة',
@@ -139,7 +140,7 @@ const translations = {
     'hero.visualAria': 'صورة تقديم عمر حسني',
     'hero.portraitAlt': 'صورة احترافية لعمر حسني',
     'hero.available': 'متاح الآن',
-    'hero.frontend': 'Full Stack',
+    'hero.frontend': 'فرونت إند',
     'hero.skills': 'WordPress • UI • Responsive',
     'stats.aria': 'أرقام ومميزات المشاريع',
     'stats.responsive': 'تصميم متجاوب',
@@ -167,10 +168,11 @@ const translations = {
     'work.card3Text': 'عرض خدمة منظم، مميزات واضحة، وأقسام مركزة على التواصل.',
     'projects.eyebrow': 'أعمالي',
     'projects.title': 'ودجيت عرض المشاريع',
-    'projects.text': 'قسم جاهز لصور مشاريعك بعدين. بدّل كل Placeholder بصورة حقيقية للمشروع لما تكون جاهزة.',
+    'projects.text': 'ودجيت مصقول لعرض صور المشاريع الطويلة. اعمل Hover على الصورة الرئيسية علشان تسكرول لحد آخر الصفحة.',
+    'projects.hoverHint': 'اعمل Hover علشان الصورة تسكرول كاملة',
     'projects.placeholder': 'ضع صورة المشروع هنا',
-    'projects.card1Title': 'مشروع موقع مميز',
-    'projects.card1Text': 'استخدم الكارت ده لأقوى Screenshot عندك مع نتيجة المشروع ووصف قصير.',
+    'projects.card1Title': 'موقع Aroma IPTV',
+    'projects.card1Text': 'عرض كامل للموقع بتأثير Auto Scroll عند الـ Hover، مناسب لعرض اللاندنج بيدج الطويلة داخل كارت بورتفوليو نظيف.',
     'projects.card2Title': 'Landing Page',
     'projects.card2Text': 'جاهز لعرض صفحة حملة أو خدمة أو منتج.',
     'projects.card3Title': 'Portfolio Build',
@@ -178,7 +180,7 @@ const translations = {
     'projects.card4Title': 'WordPress Website',
     'projects.card4Text': 'جاهز لعرض موقع شركة أو وكالة أو مقدم خدمة.',
     'projects.tagUi': 'UI Design',
-    'projects.tagDev': 'Full Stack',
+    'projects.tagDev': 'Frontend',
     'projects.tagResponsive': 'Responsive',
     'process.eyebrow': 'طريقة الشغل',
     'process.title': 'خطوات بسيطة ونتيجة مصقولة',
@@ -434,6 +436,34 @@ if (goTopButton) {
       behavior: prefersReducedMotion ? 'auto' : 'smooth'
     });
   });
+}
+
+
+const projectScreens = document.querySelectorAll('[data-project-screen]');
+
+const updateProjectScrollDistances = () => {
+  projectScreens.forEach((screen) => {
+    const image = screen.querySelector('[data-project-scroll-image]');
+    if (!image) return;
+
+    const setDistance = () => {
+      const distance = Math.max(0, image.scrollHeight - screen.clientHeight);
+      const duration = Math.max(5.5, Math.min(14, distance / 175));
+      screen.style.setProperty('--project-scroll-distance', `${distance}px`);
+      screen.style.setProperty('--project-scroll-duration', `${duration}s`);
+    };
+
+    if (image.complete) {
+      setDistance();
+    } else {
+      image.addEventListener('load', setDistance, { once: true });
+    }
+  });
+};
+
+if (projectScreens.length) {
+  updateProjectScrollDistances();
+  window.addEventListener('resize', updateProjectScrollDistances, { passive: true });
 }
 
 const supportsCustomCursor = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
