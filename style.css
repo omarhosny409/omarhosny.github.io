@@ -2007,6 +2007,45 @@ body::before {
     0 24px 70px rgba(0,0,0,.25);
 }
 
+.project-card:not(.project-featured) .project-scroll-media {
+  height: 225px;
+  min-height: 0;
+}
+
+.project-card:not(.project-featured) .project-content {
+  padding-top: 18px;
+}
+
+.project-card:not(.project-featured) .project-browser-bar {
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  height: 28px;
+  padding-inline: 10px;
+}
+
+.project-card:not(.project-featured) .project-browser-bar::after {
+  max-width: 170px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 10px;
+}
+
+.project-card:not(.project-featured) .project-hover-hint {
+  right: 12px;
+  bottom: 12px;
+  padding: 8px 10px;
+  font-size: 10px;
+}
+
+.project-card:not(.project-featured) .project-hover-hint span {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .project-scroll-media::before {
   content: "";
   position: absolute;
@@ -2027,7 +2066,7 @@ body::before {
   object-fit: initial;
   object-position: top center;
   transform: translate3d(0, 0, 0);
-  transition: transform var(--project-scroll-duration, 9s) cubic-bezier(.16,.78,.12,1);
+  transition: transform var(--project-scroll-duration, 24s) linear;
   will-change: transform;
 }
 
@@ -2055,7 +2094,7 @@ body::before {
 }
 
 .project-browser-bar::after {
-  content: "aroma-project.com";
+  content: attr(data-domain);
   margin-inline-start: 8px;
   color: rgba(255,255,255,.62);
   font-size: 11px;
@@ -2146,11 +2185,19 @@ body::before {
   .project-scroll-media {
     height: clamp(420px, 74vw, 590px);
   }
+
+  .project-card:not(.project-featured) .project-scroll-media {
+    height: 260px;
+  }
 }
 
 @media (max-width: 560px) {
   .project-scroll-media {
     height: 390px;
+  }
+
+  .project-card:not(.project-featured) .project-scroll-media {
+    height: 230px;
   }
 
   .project-browser-bar::after {
