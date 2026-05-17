@@ -1,32 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Omar Hosny - Frontend and WordPress Developer creating premium websites, landing pages, and clean digital experiences." />
   <title>Omar Hosny | Frontend & WordPress Developer</title>
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        var savedLang = localStorage.getItem('lang');
+        var theme = savedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        var lang = savedLang || 'en';
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.dataset.lang = lang;
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      } catch (error) {}
+    })();
+  </script>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
 <body class="is-loading">
-  <!-- Premium refresh loader -->
-  <div class="site-loader" id="siteLoader" aria-live="polite" aria-label="Website loading">
-    <div class="loader-grid" aria-hidden="true"></div>
-    <div class="loader-noise" aria-hidden="true"></div>
+  <div class="site-loader" id="siteLoader" aria-live="polite" aria-label="Website loading" data-i18n-aria="loader.aria">
+    <div class="loader-backdrop" aria-hidden="true"></div>
+    <div class="loader-scan" aria-hidden="true"></div>
 
-    <div class="loader-shell">
-      <div class="loader-orb" aria-hidden="true">
-        <span class="loader-ring loader-ring-one"></span>
-        <span class="loader-ring loader-ring-two"></span>
-        <span class="loader-ring loader-ring-three"></span>
-        <span class="loader-particle particle-one"></span>
-        <span class="loader-particle particle-two"></span>
-        <span class="loader-particle particle-three"></span>
-        <span class="loader-core"><strong>OH</strong></span>
+    <div class="loader-card">
+      <div class="loader-brand" aria-hidden="true">
+        <span class="loader-logo">OH</span>
+        <span class="loader-line"></span>
+        <span class="loader-dot"></span>
       </div>
 
-      <p class="loader-kicker">Protophilo Website</p>
-      <h2 class="loader-title" data-loader-title>Loading Experience</h2>
+      <p class="loader-kicker" data-i18n="loader.kicker">Portfolio System</p>
+      <h2 class="loader-title" data-loader-title data-i18n="loader.title">Crafting the interface</h2>
 
       <div class="loader-progress" aria-hidden="true">
         <span data-loader-progress></span>
@@ -38,73 +47,85 @@
       </div>
     </div>
   </div>
+
   <div class="page-shell">
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Omar Hosny home">
+      <a class="brand" href="#top" aria-label="Omar Hosny home" data-i18n-aria="brand.aria">
         <span class="brand-mark">OH</span>
         <span>
-          <strong>Omar Hosny</strong>
-          <small>Frontend & WordPress</small>
+          <strong data-i18n="brand.name">Omar Hosny</strong>
+          <small data-i18n="brand.role">Frontend & WordPress</small>
         </span>
       </a>
 
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#contact">Contact</a>
+      <nav class="main-nav" aria-label="Main navigation" data-i18n-aria="nav.aria">
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#projects" data-i18n="nav.projects">My Projects</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
 
-      <a class="nav-cta" href="https://wa.me/201210150524" target="_blank" rel="noreferrer">WhatsApp</a>
+      <div class="header-actions">
+        <button class="icon-toggle theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme" data-i18n-aria="controls.themeAria">
+          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+          <span data-theme-label>Dark</span>
+        </button>
+        <button class="icon-toggle language-toggle" type="button" data-lang-toggle aria-label="Switch language" data-i18n-aria="controls.langAria">
+          <i class="fa-solid fa-globe" aria-hidden="true"></i>
+          <span data-lang-label>AR</span>
+        </button>
+        <a class="nav-cta" href="https://wa.me/201210150524" target="_blank" rel="noreferrer" data-i18n="nav.whatsapp">WhatsApp</a>
+      </div>
     </header>
 
     <main id="top">
       <section class="hero section-grid">
         <div class="hero-content reveal">
-          <p class="eyebrow">Available for freelance projects</p>
-          <h1>I build premium websites with clean code, sharp visuals, and business focus.</h1>
-          <p class="hero-text">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Available for freelance projects</p>
+          <h1 data-i18n="hero.title">I build premium websites with clean code, sharp visuals, and business focus.</h1>
+          <p class="hero-text" data-i18n="hero.text">
             Frontend and WordPress developer creating modern portfolio websites, landing pages, and digital experiences that look professional, load fast, and turn visitors into clients.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/201210150524" target="_blank" rel="noreferrer">Start a project</a>
-            <a class="btn btn-secondary" href="#work">View work</a>
+            <a class="btn btn-primary" href="https://wa.me/201210150524" target="_blank" rel="noreferrer" data-i18n="hero.primary">Start a project</a>
+            <a class="btn btn-secondary" href="#projects" data-i18n="hero.secondary">View projects</a>
           </div>
 
-          <div class="trust-row" aria-label="Key strengths">
-            <span>Responsive design</span>
-            <span>Fast performance</span>
-            <span>Clean structure</span>
+          <div class="trust-row" aria-label="Key strengths" data-i18n-aria="hero.trustAria">
+            <span data-i18n="hero.trust1">Responsive design</span>
+            <span data-i18n="hero.trust2">Fast performance</span>
+            <span data-i18n="hero.trust3">Clean structure</span>
           </div>
         </div>
 
-        <aside class="hero-card hero-visual reveal" aria-label="Omar Hosny intro portrait">
+        <aside class="hero-card hero-visual reveal" aria-label="Omar Hosny intro portrait" data-i18n-aria="hero.visualAria">
           <div class="card-glow"></div>
           <div class="portrait-card" data-tilt-card>
             <span class="orbit orbit-one"></span>
             <span class="orbit orbit-two"></span>
 
             <div class="portrait-frame">
-              <img src="assets/omar-hosny-intro.jpg" alt="Omar Hosny professional portrait" />
+              <img src="assets/omar-hosny-intro.jpg" alt="Omar Hosny professional portrait" data-i18n-alt="hero.portraitAlt" />
               <span class="portrait-shine" aria-hidden="true"></span>
             </div>
 
             <div class="floating-badge badge-top">
               <span class="status-dot"></span>
-              <strong>Available now</strong>
+              <strong data-i18n="hero.available">Available now</strong>
             </div>
 
             <div class="floating-badge badge-bottom">
-              <strong>Frontend</strong>
-              <span>WordPress • UI • Responsive</span>
+              <strong data-i18n="hero.frontend">Frontend</strong>
+              <span data-i18n="hero.skills">WordPress • UI • Responsive</span>
             </div>
           </div>
 
           <div class="profile-strip">
             <div class="avatar">OH</div>
             <div>
-              <h2>Omar Hosny</h2>
-              <p>Frontend & WordPress Developer</p>
+              <h2 data-i18n="brand.name">Omar Hosny</h2>
+              <p data-i18n="profile.role">Frontend & WordPress Developer</p>
             </div>
           </div>
 
@@ -115,52 +136,52 @@
         </aside>
       </section>
 
-      <section class="stats reveal" aria-label="Project highlights">
+      <section class="stats reveal" aria-label="Project highlights" data-i18n-aria="stats.aria">
         <div>
           <strong>100%</strong>
-          <span>Responsive layouts</span>
+          <span data-i18n="stats.responsive">Responsive layouts</span>
         </div>
         <div>
-          <strong>Clean</strong>
-          <span>HTML, CSS, JS</span>
+          <strong data-i18n="stats.cleanValue">Clean</strong>
+          <span data-i18n="stats.cleanText">HTML, CSS, JS</span>
         </div>
         <div>
-          <strong>Modern</strong>
-          <span>Portfolio style</span>
+          <strong data-i18n="stats.modernValue">Modern</strong>
+          <span data-i18n="stats.modernText">Portfolio style</span>
         </div>
       </section>
 
       <section id="services" class="section reveal">
         <div class="section-heading">
-          <p class="eyebrow">Services</p>
-          <h2>What I can build</h2>
-          <p>Professional websites with clear sections, strong visuals, and a structure that works on desktop and mobile.</p>
+          <p class="eyebrow" data-i18n="services.eyebrow">Services</p>
+          <h2 data-i18n="services.title">What I can build</h2>
+          <p data-i18n="services.text">Professional websites with clear sections, strong visuals, and a structure that works on desktop and mobile.</p>
         </div>
 
         <div class="cards three-columns">
           <article class="service-card">
             <span>01</span>
-            <h3>Landing Pages</h3>
-            <p>High-impact landing pages for products, services, campaigns, and personal brands.</p>
+            <h3 data-i18n="services.card1Title">Landing Pages</h3>
+            <p data-i18n="services.card1Text">High-impact landing pages for products, services, campaigns, and personal brands.</p>
           </article>
           <article class="service-card">
             <span>02</span>
-            <h3>Portfolio Websites</h3>
-            <p>Elegant personal websites that present your skills, work, and contact details professionally.</p>
+            <h3 data-i18n="services.card2Title">Portfolio Websites</h3>
+            <p data-i18n="services.card2Text">Elegant personal websites that present your skills, work, and contact details professionally.</p>
           </article>
           <article class="service-card">
             <span>03</span>
-            <h3>WordPress Websites</h3>
-            <p>Clean WordPress websites for businesses, freelancers, service providers, and agencies.</p>
+            <h3 data-i18n="services.card3Title">WordPress Websites</h3>
+            <p data-i18n="services.card3Text">Clean WordPress websites for businesses, freelancers, service providers, and agencies.</p>
           </article>
         </div>
       </section>
 
       <section id="work" class="section reveal">
         <div class="section-heading">
-          <p class="eyebrow">Portfolio</p>
-          <h2>Selected website styles</h2>
-          <p>A polished direction for business, personal brand, and service-based websites.</p>
+          <p class="eyebrow" data-i18n="work.eyebrow">Portfolio</p>
+          <h2 data-i18n="work.title">Selected website styles</h2>
+          <p data-i18n="work.text">A polished direction for business, personal brand, and service-based websites.</p>
         </div>
 
         <div class="work-grid">
@@ -168,62 +189,137 @@
             <div class="mock-window">
               <span></span><span></span><span></span>
             </div>
-            <h3>Modern Business Landing Page</h3>
-            <p>Premium hero section, service cards, strong call-to-action, and responsive layout.</p>
+            <h3 data-i18n="work.card1Title">Modern Business Landing Page</h3>
+            <p data-i18n="work.card1Text">Premium hero section, service cards, strong call-to-action, and responsive layout.</p>
           </article>
           <article class="work-card">
             <div class="mock-shape"></div>
-            <h3>Personal Brand Portfolio</h3>
-            <p>Clean profile, work highlights, and direct contact actions.</p>
+            <h3 data-i18n="work.card2Title">Personal Brand Portfolio</h3>
+            <p data-i18n="work.card2Text">Clean profile, work highlights, and direct contact actions.</p>
           </article>
           <article class="work-card">
             <div class="mock-shape second"></div>
-            <h3>Service Provider Website</h3>
-            <p>Structured offer, benefits, and contact-focused sections.</p>
+            <h3 data-i18n="work.card3Title">Service Provider Website</h3>
+            <p data-i18n="work.card3Text">Structured offer, benefits, and contact-focused sections.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="section projects-widget reveal">
+        <div class="section-heading projects-heading">
+          <p class="eyebrow" data-i18n="projects.eyebrow">My Projects</p>
+          <h2 data-i18n="projects.title">Project showcase widget</h2>
+          <p data-i18n="projects.text">A ready section for your future project images. Replace each placeholder with a real screenshot when a project is ready.</p>
+        </div>
+
+        <div class="project-board">
+          <article class="project-card project-featured">
+            <div class="project-media">
+              <div class="media-placeholder">
+                <i class="fa-regular fa-image" aria-hidden="true"></i>
+                <span data-i18n="projects.placeholder">Add project image here</span>
+              </div>
+              <!-- Later: replace the placeholder above with <img src="assets/project-01.jpg" alt="Project 01 preview"> -->
+            </div>
+            <div class="project-content">
+              <span class="project-index">01</span>
+              <h3 data-i18n="projects.card1Title">Featured Website Project</h3>
+              <p data-i18n="projects.card1Text">Use this card for your strongest website screenshot, result, and short project description.</p>
+              <div class="project-tags">
+                <span data-i18n="projects.tagUi">UI Design</span>
+                <span data-i18n="projects.tagDev">Frontend</span>
+                <span data-i18n="projects.tagResponsive">Responsive</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-media compact-media">
+              <div class="media-placeholder">
+                <i class="fa-regular fa-image" aria-hidden="true"></i>
+                <span data-i18n="projects.placeholder">Add project image here</span>
+              </div>
+              <!-- Later: replace the placeholder above with <img src="assets/project-02.jpg" alt="Project 02 preview"> -->
+            </div>
+            <div class="project-content">
+              <span class="project-index">02</span>
+              <h3 data-i18n="projects.card2Title">Landing Page</h3>
+              <p data-i18n="projects.card2Text">Prepared for a campaign, service, or product landing page preview.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-media compact-media">
+              <div class="media-placeholder">
+                <i class="fa-regular fa-image" aria-hidden="true"></i>
+                <span data-i18n="projects.placeholder">Add project image here</span>
+              </div>
+              <!-- Later: replace the placeholder above with <img src="assets/project-03.jpg" alt="Project 03 preview"> -->
+            </div>
+            <div class="project-content">
+              <span class="project-index">03</span>
+              <h3 data-i18n="projects.card3Title">Portfolio Build</h3>
+              <p data-i18n="projects.card3Text">Prepared for a personal brand, CV, or portfolio website preview.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-media compact-media">
+              <div class="media-placeholder">
+                <i class="fa-regular fa-image" aria-hidden="true"></i>
+                <span data-i18n="projects.placeholder">Add project image here</span>
+              </div>
+              <!-- Later: replace the placeholder above with <img src="assets/project-04.jpg" alt="Project 04 preview"> -->
+            </div>
+            <div class="project-content">
+              <span class="project-index">04</span>
+              <h3 data-i18n="projects.card4Title">WordPress Website</h3>
+              <p data-i18n="projects.card4Text">Prepared for a business, agency, or service provider website preview.</p>
+            </div>
           </article>
         </div>
       </section>
 
       <section class="section process reveal">
         <div class="section-heading">
-          <p class="eyebrow">Process</p>
-          <h2>Simple workflow, polished result</h2>
+          <p class="eyebrow" data-i18n="process.eyebrow">Process</p>
+          <h2 data-i18n="process.title">Simple workflow, polished result</h2>
         </div>
 
         <div class="timeline">
           <div>
             <span>01</span>
-            <h3>Plan</h3>
-            <p>Define the page goal, audience, sections, and content structure.</p>
+            <h3 data-i18n="process.step1Title">Plan</h3>
+            <p data-i18n="process.step1Text">Define the page goal, audience, sections, and content structure.</p>
           </div>
           <div>
             <span>02</span>
-            <h3>Design</h3>
-            <p>Create a clean premium visual direction that fits the brand.</p>
+            <h3 data-i18n="process.step2Title">Design</h3>
+            <p data-i18n="process.step2Text">Create a clean premium visual direction that fits the brand.</p>
           </div>
           <div>
             <span>03</span>
-            <h3>Build</h3>
-            <p>Develop responsive pages with organized HTML, CSS, and JavaScript.</p>
+            <h3 data-i18n="process.step3Title">Build</h3>
+            <p data-i18n="process.step3Text">Develop responsive pages with organized HTML, CSS, and JavaScript.</p>
           </div>
         </div>
       </section>
 
       <section id="contact" class="contact-section reveal">
         <div>
-          <p class="eyebrow">Contact</p>
-          <h2>Ready to build a professional website?</h2>
-          <p>Send a message and share the type of website you need.</p>
+          <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+          <h2 data-i18n="contact.title">Ready to build a professional website?</h2>
+          <p data-i18n="contact.text">Send a message and share the type of website you need.</p>
         </div>
         <div class="contact-actions">
-          <a class="btn btn-primary" href="https://wa.me/201210150524" target="_blank" rel="noreferrer">WhatsApp me</a>
-          <a class="btn btn-secondary" href="mailto:omarhosny10100@gmail.com">Send email</a>
+          <a class="btn btn-primary" href="https://wa.me/201210150524" target="_blank" rel="noreferrer" data-i18n="contact.whatsapp">WhatsApp me</a>
+          <a class="btn btn-secondary" href="mailto:omarhosny10100@gmail.com" data-i18n="contact.email">Send email</a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>© <span id="year"></span> Omar Hosny. All rights reserved.</p>
+      <p>© <span id="year"></span> <span data-i18n="brand.name">Omar Hosny</span>. <span data-i18n="footer.rights">All rights reserved.</span></p>
       <div>
         <a href="tel:+201210150524">01210150524</a>
         <a href="mailto:omarhosny10100@gmail.com">omarhosny10100@gmail.com</a>
@@ -231,33 +327,31 @@
     </footer>
   </div>
 
-  <!-- Social sidebar -->
-  <div class="social-sidebar" aria-label="Social profiles">
-    <a class="social-link" href="https://www.instagram.com/omar_7ossny?igsh=OXhodmFxNWk2N3Nw" aria-label="Instagram profile">
+  <div class="social-sidebar" aria-label="Social profiles" data-i18n-aria="social.aria">
+    <a class="social-link" href="https://www.instagram.com/omar_7ossny?igsh=OXhodmFxNWk2N3Nw" target="_blank" rel="noreferrer" aria-label="Instagram profile">
       <i class="fa-brands fa-instagram"></i>
     </a>
-    <a class="social-link" href="https://www.linkedin.com/in/ømãř-høșñý-143150364?utm_source=share_via&utm_content=profile&utm_medium=member_android" aria-label="LinkedIn profile">
+    <a class="social-link" href="https://www.linkedin.com/in/ømãř-høșñý-143150364?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
       <i class="fa-brands fa-linkedin-in"></i>
     </a>
-    <a class="social-link" href="https://www.facebook.com/share/1XgpdSrCRt/" aria-label="Behance profile">
-      <i class="fa-brands fa-facebook"></i>
+    <a class="social-link" href="https://www.facebook.com/share/1XgpdSrCRt/" target="_blank" rel="noreferrer" aria-label="Facebook profile">
+      <i class="fa-brands fa-facebook-f"></i>
     </a>
   </div>
 
-  <div class="fixed-contact-actions" aria-label="Quick contact actions">
-    <a class="fixed-action-btn phone-btn" href="tel:+201210150524" aria-label="Call Omar Hosny">
+  <div class="fixed-contact-actions" aria-label="Quick contact actions" data-i18n-aria="fixed.aria">
+    <a class="fixed-action-btn phone-btn" href="tel:+201210150524" aria-label="Call Omar Hosny" data-i18n-aria="fixed.call">
        <i class="fa-solid fa-phone"></i>
     </a>
-    <a class="fixed-action-btn whatsapp-btn" href="https://wa.me/201210150524" target="_blank" rel="noreferrer" aria-label="WhatsApp Omar Hosny">
+    <a class="fixed-action-btn whatsapp-btn" href="https://wa.me/201210150524" target="_blank" rel="noreferrer" aria-label="WhatsApp Omar Hosny" data-i18n-aria="fixed.whatsapp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
   </div>
 
-  <button class="go-top-btn" type="button" aria-label="Go to top">
-     <svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="21" height="21" viewBox="0,0,256,256"><g fill="#ffffff" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="translate(257.01504,254.31174) rotate(180) scale(12.19048,12.19048)"><path d="M18.4511,9.37805c-2.3977,0 -4.583,-2.18433 -4.583,-4.58304v-0.98349h-1.967v0.98349c0,1.74469 0.7652,3.38121 1.966,4.58304h-12.13517v1.96695h12.13517c-1.2008,1.2018 -1.966,2.8383 -1.966,4.583v0.9835h1.967v-0.9835c0,-2.3987 2.1853,-4.583 4.583,-4.583h0.9835v-1.96695z"></path></g></g></svg>
+  <button class="go-top-btn" type="button" aria-label="Go to top" data-i18n-aria="fixed.top">
+     <svg xmlns="https://www.w3.org/2000/svg" width="21" height="21" viewBox="0,0,256,256"><g fill="#ffffff" fill-rule="evenodd"><g transform="translate(257.01504,254.31174) rotate(180) scale(12.19048,12.19048)"><path d="M18.4511,9.37805c-2.3977,0 -4.583,-2.18433 -4.583,-4.58304v-0.98349h-1.967v0.98349c0,1.74469 0.7652,3.38121 1.966,4.58304h-12.13517v1.96695h12.13517c-1.2008,1.2018 -1.966,2.8383 -1.966,4.583v0.9835h1.967v-0.9835c0,-2.3987 2.1853,-4.583 4.583,-4.583h0.9835v-1.96695z"></path></g></g></svg>
   </button>
 
-  <!-- Custom cursor -->
   <div class="cursor-glow" aria-hidden="true"></div>
   <div class="cursor-dot" aria-hidden="true"></div>
 
