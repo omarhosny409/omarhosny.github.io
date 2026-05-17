@@ -1317,10 +1317,11 @@ h1 {
   width: 52px;
   height: 52px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, .16);
   border-radius: 50%;
   color: #fff;
-  background: rgba(0, 0, 0, .34);
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .045));
+  box-shadow: var(--shadow);
   backdrop-filter: blur(16px);
   box-shadow: 0 18px 42px rgba(0, 0, 0, .32);
   font-size: 21px;
@@ -1345,9 +1346,9 @@ h1 {
 .social-link:hover,
 .social-link:focus-visible {
   transform: translateX(6px) scale(1.05);
-  border-color: rgba(34, 211, 238, .62);
+  border-color: #fff0b8;
   background: rgba(0, 0, 0, .58);
-  box-shadow: 0 0 0 1px rgba(34, 211, 238, .16), 0 0 34px rgba(34, 211, 238, .18);
+  box-shadow: 0 0 0 1px #fff0b84a, 0 0 34px #fff0b847;
   outline: none;
 }
 
@@ -1371,8 +1372,8 @@ h1 {
 .cursor-dot {
   width: 14px;
   height: 14px;
-  background: #22d3ee;
-  box-shadow: 0 0 18px rgba(34, 211, 238, .95), 0 0 44px rgba(34, 211, 238, .42);
+  background: linear-gradient(135deg, var(--accent), #fff0b8);
+  box-shadow: 0 0 18px rgb(247 232 178), 0 0 44px rgba(34, 211, 238, .42);
   transition: opacity .18s ease, width .22s ease, height .22s ease, background .22s ease;
 }
 
@@ -1380,7 +1381,7 @@ h1 {
   z-index: 9998;
   width: 78px;
   height: 78px;
-  background: radial-gradient(circle, rgba(34, 211, 238, .30) 0%, rgba(34, 211, 238, .16) 35%, transparent 72%);
+  background: radial-gradient(circle, #fff0b88c 0%, #fff0b812 35%, transparent 72%);
   filter: blur(3px);
   mix-blend-mode: screen;
   transition: opacity .18s ease;
@@ -1394,7 +1395,7 @@ body.cursor-active .cursor-glow {
 body.cursor-hover .cursor-dot {
   width: 20px;
   height: 20px;
-  background: #67e8f9;
+  background: #ffffff;
 }
 
 @media (hover: hover) and (pointer: fine) {
